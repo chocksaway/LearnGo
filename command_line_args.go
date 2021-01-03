@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"os"
 	"strconv"
 )
@@ -11,10 +12,10 @@ import (
 */
 func main() {
 	if len(os.Args) == 1 {
-		fmt.Println("Please give one or more arguments")
+		io.WriteString(os.Stderr, "Please give one or more arguments\n")
 		os.Exit(1)
 	} else if len(os.Args) != 3 {
-		fmt.Println("Two arguments expected")
+		io.WriteString(os.Stderr, "Two arguments expected\n")
 		os.Exit(1)
 	}
 
