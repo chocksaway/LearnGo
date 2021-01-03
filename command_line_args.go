@@ -3,7 +3,10 @@ package main
 import (
 	"fmt"
 	"io"
+	"log"
+	"log/syslog"
 	"os"
+	"path/filepath"
 	"strconv"
 )
 
@@ -11,6 +14,15 @@ import (
 	Check for exactly two arguments
 */
 func main() {
+	programName := filepath.Base(os.Args[0])
+	sysLog, err := syslog.New(syslog.LOG_INFO|syslog.LOG_MAIL, programName)
+
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		log.SetOutput(sysLog)
+	}
+
 	if len(os.Args) == 1 {
 		io.WriteString(os.Stderr, "Please give one or more arguments\n")
 		os.Exit(1)
@@ -35,4 +47,6 @@ func main() {
 
 	fmt.Println("Min:", min)
 	fmt.Println("Max:", max)
+
+	log.Println("LOG_MAIL: ", programName, " finished")
 }
