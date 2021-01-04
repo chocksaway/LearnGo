@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"io"
 	"log"
@@ -45,8 +46,24 @@ func main() {
 		}
 	}
 
+	err = returnError(min, max)
+	if err == nil {
+		fmt.Println("returnError() ended normally!")
+	} else {
+		fmt.Println(err)
+	}
+
 	fmt.Println("Min:", min)
 	fmt.Println("Max:", max)
 
 	log.Println("LOG_MAIL: ", programName, " finished")
+}
+
+func returnError(a, b float64) error {
+	if a == b {
+		err := errors.New("min and max are the same")
+		return err
+	} else {
+		return nil
+	}
 }
