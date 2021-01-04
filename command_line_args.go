@@ -50,7 +50,9 @@ func main() {
 	if err == nil {
 		fmt.Println("returnError() ended normally!")
 	} else {
-		fmt.Println(err)
+		if err.Error() == "min and max are the same" {
+			fmt.Println("This is not good.....")
+		}
 	}
 
 	fmt.Println("Min:", min)
