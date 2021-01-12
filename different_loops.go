@@ -10,4 +10,6 @@ func main() {
 		counter++
 		fmt.Println(counter)
 	}
+
+	fmt.Println("Exited loop counter = ", counter)
 }
