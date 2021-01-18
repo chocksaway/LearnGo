@@ -3,12 +3,18 @@ package main
 import "fmt"
 
 func main() {
-	var aSliceLiteral = []int{1, 2, 3, 4, 5}
+	var intSlice = []int{1, 2, 3, 4, 5}
 
-	fmt.Print(aSliceLiteral)
+	fmt.Print(intSlice)
 
-	aSliceLiteral = append(aSliceLiteral, 6)
+	intSlice = append(intSlice, 6)
 
-	fmt.Print(aSliceLiteral)
+	partSlice := intSlice[1:3]
+
+	fmt.Print(intSlice)
+
+	fmt.Print(intSlice[1:3])
+
+	fmt.Println(partSlice)
 
 }
