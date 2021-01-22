@@ -3,13 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	var intSlice = []int{1, 2, 3, 4, 5}
-	var intSlice2 = []int{-1, 6}
+	intSlice := []int{1, 2, 3, 4, 5}
+	intSlice2 := []int{-1, 6}
 
-	// destination source
+	// destination -> source
 	copy(intSlice, intSlice2)
 
 	fmt.Println(intSlice)
+
+	fmt.Println(intSlice2)
+
+	array5 := [5]int{5, -5, 5, -5, 5}
+
+	copy(intSlice2, array5[0:1]) // convert array into slice :
 
 	fmt.Println(intSlice2)
 
