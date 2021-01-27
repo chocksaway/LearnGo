@@ -3,6 +3,12 @@ package main
 import "fmt"
 
 func main() {
+	s1 := make([][]int, 4)
+
+	s1[2] = []int{1, 2, 3, 4, 5}
+
+	fmt.Println(s1)
+
 	intSlice := []int{1, 2, 3, 4, 5}
 	intSlice2 := []int{-1, 6}
 
