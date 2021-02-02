@@ -20,6 +20,8 @@ func main() {
 		fmt.Println("Does NOT exist")
 	}
 
+	anotherMap["k3"] = 22
+
 	for key, value := range anotherMap {
 		fmt.Println(key, value)
 	}
