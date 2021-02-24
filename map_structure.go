@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+const const_str string = "milesd"
+
 func main() {
 	var anotherMap = map[string]int{
 		"k1": 12,
@@ -25,4 +27,6 @@ func main() {
 	for key, value := range anotherMap {
 		fmt.Println(key, value)
 	}
+
+	fmt.Print(const_str)
 }
