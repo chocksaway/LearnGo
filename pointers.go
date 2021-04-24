@@ -3,24 +3,14 @@ package main
 import "fmt"
 
 func main() {
-	i := -10
-	j := 25
+	k := 100
+	pK := &k
 
-	pI := &i
-	pJ := &j
+	fmt.Println("p:", k)
+	fmt.Println("pK", *pK)
 
-	fmt.Println("pI memory:", pI)
-	fmt.Println("pJ memory:", pJ)
-	fmt.Println("pI value:", *pI)
-	fmt.Println("pJ value:", *pJ)
-}
+	*pK = 200
 
-func getPointer(n *int) {
-	*n = *n * *n
-
-}
-
-func returnPointer(n int) *int {
-	v := n * n
-	return &v
+	fmt.Println("p:", k)
+	fmt.Println("pK", *pK)
 }
